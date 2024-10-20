@@ -52,14 +52,14 @@ python manage.py runserver
 ## API Endpoints
 
 ### User Endpoints:
-- **Create User**: `POST /api/users/`
-- **Get User Details**: `GET /api/users/<int:pk>/`
+- **Create User**: `POST /users/`
+- **Get User Details**: `GET /users/<int:pk>/`
 
 ### Expense Endpoints:
-- **Add Expense**: `POST /api/expenses/`
-- **Get User Expenses**: `GET /api/expenses/user/`
-- **Get All Expenses**: `GET /api/expenses/all/`
-- **Download Balance Sheet**: `GET /api/balance-sheet/`
+- **Add Expense**: `POST /expenses/`
+- **Get User Expenses**: `GET /expenses/user/`
+- **Get All Expenses**: `GET /expenses/all/`
+- **Download Balance Sheet**: `GET /balance-sheet/`
 
 ## Testing
 To run tests, use the following command:
