@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense App - Home</title>
+    <style>
+        body {
+            background: #E0E5EC;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 20px 0;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+            width: 200px; /* Set a fixed width */
+            text-align: center; /* Center the text inside */
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 12px;
+            background: #E0E5EC;
+            box-shadow: 9px 9px 16px #A3B1C6,
+                        -9px -9px 16px #FFFFFF;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Hover effect for neumorphic links */
+        a:hover {
+            box-shadow: inset 5px 5px 10px #A3B1C6,
+                        inset -5px -5px 10px #FFFFFF;
+        }
+
+        /* Neumorphic card for content */
+        p {
+            background: #E0E5EC;
+            padding: 15px 30px;
+            border-radius: 12px;
+            box-shadow: 9px 9px 16px #A3B1C6,
+                        -9px -9px 16px #FFFFFF;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Daily Expenses Sharing Application</h1>
+    <p>Logged in as {{ request.user.email }}</p>
+    <a href="{% url 'register' %}">Register</a>
+    <nav>
+        <ul>
+            <li><a href="{% url 'add-expense' %}">Add Expense</a></li>
+            <li><a href="{% url 'user-expenses' %}">My Expenses</a></li>
+            <li><a href="{% url 'all-expenses' %}">All Expenses</a></li>
+            <li><a href="{% url 'balance-sheet' %}">Download Balance Sheet</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

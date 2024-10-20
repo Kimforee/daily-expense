@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #e0e0e0;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 9px 9px 16px #bebebe, -9px -9px 16px #ffffff;
+        }
+
+        input {
+            width: 250px;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 15px;
+            box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+        }
+
+        button {
+            width: 270px;
+            padding: 12px;
+            border: none;
+            border-radius: 15px;
+            background-color: #e0e0e0;
+            box-shadow: 9px 9px 16px #bebebe, -9px -9px 16px #ffffff;
+            cursor: pointer;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        button:hover {
+            box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+        }
+
+        p {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <h2>Login</h2>
+        {% csrf_token %}
+        <label  for="email">Use email: test5@gmail.com</label><br>
+        <input type="text" name="email" id="email" list="email-suggestions" required placeholder="test5@gmail.com"><br>
+        <datalist id="email-suggestions">
+            <option value="test5@gmail.com">
+        </datalist>
+    
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" required placeholder="123"><br>
+    
+        <button type="submit">Login</button>
+        <br>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %} 
+    </form>
+    
+    <script>
+        document.getElementById('email').addEventListener('input', function() {
+            const email = this.value;
+            const passwordField = document.getElementById('password');
+            
+            if (email === 'test5@gmail.com') {
+                passwordField.value = '123';
+            } else {
+                passwordField.value = '';
+            }
+        });
+    </script>    
+</body>
+</html>
