@@ -41,6 +41,9 @@ pip install -r requirements.txt
 2. Update the `DATABASES` section in `settings.py` to match your database configuration.
 3. Run migrations:
    ```bash
+   python manage.py makemigrations
+   ```
+   ```bash
    python manage.py migrate
    ```
 
@@ -86,5 +89,3 @@ daily_expenses/
 This project is licensed under the MIT License.
 
 ---
-
-You can adjust the placeholders and include any additional details specific to your project.
